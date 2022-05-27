@@ -18,7 +18,7 @@ on:
       DEVICE_TREE_URL:
         description: 'DEVICE_TREE_URL'
         required: true
-        default: 'https://github.com/SGCMarkus/android_device_RMX3261_11_A.79'
+        default: 'https://github.com/DragonWarriorJS/android_device_RMX3261_11_A.79'
       DEVICE_TREE_BRANCH:
         description: 'DEVICE_TREE_BRANCH'
         required: true
