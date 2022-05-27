@@ -110,7 +110,6 @@ jobs:
           workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/init
           workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/*.txt
           workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/*.img
-          workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/boot.img
         name: ${{ github.event.inputs.DEVICE_NAME }}-${{ github.run_id }}
         tag_name: ${{ github.run_id }}
         body: Recovery for ${{ github.event.inputs.DEVICE_NAME }}
