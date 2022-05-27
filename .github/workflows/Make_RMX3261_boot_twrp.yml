@@ -1,4 +1,4 @@
-name: Make RMX3261 Recovery
+name: Make RMX3261 bootimage Recovery
 
 on:
   workflow_dispatch:
@@ -107,9 +107,10 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
         files: |
-          workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/*.zip
-          workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/recovery.img
-          workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/*.cpio
+          workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/init
+          workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/*.txt
+          workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/*.img
+          workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/boot.img
         name: ${{ github.event.inputs.DEVICE_NAME }}-${{ github.run_id }}
         tag_name: ${{ github.run_id }}
         body: Recovery for ${{ github.event.inputs.DEVICE_NAME }}
