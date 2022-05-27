@@ -18,6 +18,9 @@ To initialize a shallow clone, which will save even more space, use a command li
 Then to sync up:
 
     repo sync
+Clone this device:
+
+    git clone https://github.com/DragonWarriorJS/android_device_RMX3261_11_A.79 -b device/realme/RMX3261
 
 NOTE: Device makefile in the device tree and dependencies file should use the "twrp" prefix.
 
