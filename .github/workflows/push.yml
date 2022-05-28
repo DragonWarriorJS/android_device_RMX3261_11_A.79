@@ -1,0 +1,18 @@
+name: Make RMX3261 bootimage Recovery
+
+on:
+  workflow_dispatch:
+    
+
+jobs:
+
+    - name: Upload to Pre-Release
+      uses: softprops/action-gh-release@v1
+      with:
+        prerelease:
+        name: BlaBla-${{ github.run_id }}
+        tag_name: Bla1
+        body: Bla bla2
+        
+      env:
+        GITHUB_TOKEN: ${{ secrets.test }}
