@@ -4,13 +4,14 @@ on:
   workflow_dispatch:
     
 
-
-
+jobs:
+  build:
+    steps:
     - name: Upload to Pre-Release
       uses: softprops/action-gh-release@v1
       with:
         prerelease:
-        name: BlaBla-${{ github.run_id }}
+        name: BlaBla
         tag_name: Bla1
         body: Bla bla2
         
