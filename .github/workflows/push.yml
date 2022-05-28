@@ -1,19 +1,21 @@
-name: Make RMX3261 bootimage Recovery
+name: Main
 
-on:
-  workflow_dispatch:
-    
+on: push
 
 jobs:
   build:
+    runs-on: ubuntu-latest
     steps:
-    - name: Upload to Pre-Release
-      uses: softprops/action-gh-release@v1
-      with:
-        prerelease:
-        name: BlaBla
-        tag_name: Bla1
-        body: Bla bla2
-        
-      env:
-        GITHUB_TOKEN: ${{ secrets.test }}
+      - name: Checkout
+        uses: actions/checkout@master
+      - name: Generate Changelog
+        run: echo "# Good things have arrived" > ${{ github.workflow }}-CHANGELOG.txt
+      - name: Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          prerelease:
+          body_path: ${{ github.workflow }}-CHANGELOG.txt
+        env:
+          GITHUB_TOKEN: ${{ secrets.test }}
+
