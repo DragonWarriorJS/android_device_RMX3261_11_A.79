@@ -13,7 +13,7 @@ product /product ext4 ro,barrier=1 wait,logical,first_stage_mount
 /spl                            emmc     /dev/block/mmcblk0boot0                                                                      
 /spl_bk                         emmc     /dev/block/mmcblk0boot1                                                                   
 /uboot                          emmc     /dev/block/mmcblk0p8                              
-/uboot_bak         		        emmc     /dev/block/mmcblk0p9
+/uboot_bak                      emmc     /dev/block/mmcblk0p9
 /uboot_log                      emmc     /dev/block/mmcblk0p10                       
 /sml                            emmc     /dev/block/by-name/sml                        
 /sml_bak                        emmc     /dev/block/mmcblk0p7                        
