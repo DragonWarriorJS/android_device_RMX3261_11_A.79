@@ -106,7 +106,6 @@ jobs:
     - name: Upload to Pre-Release
       uses: softprops/action-gh-release@v1
       with:
-        prerelease:
         files: |
           workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/ramdisk.img
           workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/boot.img
