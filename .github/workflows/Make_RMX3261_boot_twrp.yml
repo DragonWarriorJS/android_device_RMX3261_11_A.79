@@ -103,7 +103,7 @@ jobs:
         make clean
         make bootimage -j$(nproc --all)
 
-    - name: Upload to Release
+    - name: Upload to Pre-Release
       uses: softprops/action-gh-release@v1
       with:
         files: |
@@ -112,5 +112,6 @@ jobs:
         name: ${{ github.event.inputs.DEVICE_NAME }}-${{ github.run_id }}
         tag_name: Boot ${{ github.run_id }}
         body: Boot Recovery for ${{ github.event.inputs.DEVICE_NAME }}
+        prerelease true
       env:
         GITHUB_TOKEN: ${{ secrets.test }}
