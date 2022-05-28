@@ -106,12 +106,12 @@ jobs:
     - name: Upload to Pre-Release
       uses: softprops/action-gh-release@v1
       with:
+        prerelease:
         files: |
           workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/ramdisk.img
           workspace/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/boot.img
         name: ${{ github.event.inputs.DEVICE_NAME }}-${{ github.run_id }}
         tag_name: Boot ${{ github.run_id }}
         body: Boot Recovery for ${{ github.event.inputs.DEVICE_NAME }}
-        prerelease true
       env:
         GITHUB_TOKEN: ${{ secrets.test }}
